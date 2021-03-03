@@ -1,0 +1,28 @@
+﻿@model ZeMessanger.Models.Message
+@{
+    ViewData["Title"] = "private Chat";
+}
+
+<div class="row">
+    <div class="col-md-12">
+
+        <h4>Reciever name</h4>
+        
+        <form asp-action="GetRecieverName"
+              data-ajax="true" data-ajax-method="POST">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @Html.TextBox("reciever")
+            </div>
+            @*<div class="form-group">
+               <select asp-for="Id" asp-items="@(new SelectList(@ViewBag.listOfUsers,"Id","UserName"))"name="reciever"></select>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="private Chat" class="btn btn-outline-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
